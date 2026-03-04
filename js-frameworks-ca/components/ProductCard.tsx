@@ -37,6 +37,12 @@ export default function ProductCard({ product }: { product: Product }) {
       <div className="mt-2">
         <h2 className="text-lg font-semibold">{product.title}</h2>
 
+        {/* Rating (added) */}
+        <p className="mt-1 text-sm text-gray-600">
+          Rating: <span className="font-medium">{product.rating}</span>
+        </p>
+
+        {/* Price Section */}
         <div className="mt-2 flex items-center gap-2">
           <p className="font-bold">{mainPrice} kr</p>
 
