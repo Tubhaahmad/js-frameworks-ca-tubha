@@ -11,7 +11,7 @@ export async function getProducts(): Promise<Product[]> {
   }
 
   const json = (await response.json()) as GetProductsResponse;
-
+  console.log("Fetched Products:", json.data); //
   return json.data;
 }
 
