@@ -27,8 +27,8 @@ export default function CartPage() {
   }
 
   return (
-    <main className="p-6">
-      <h1 className="text-2xl font-bold">Cart</h1>
+    <main className="p-6 bg-white h-200">
+      <h1 className="text-2xl font-bold text-black">Cart</h1>
 
       <div className="mt-6 space-y-4">
         {items.map((item) => (
@@ -40,14 +40,14 @@ export default function CartPage() {
             />
 
             <div className="flex-1">
-              <p className="font-semibold">{item.title}</p>
+              <p className="font-semibold text-black">{item.title}</p>
 
               <p className="text-sm text-gray-600">
                 Price: {item.unitPrice} kr
               </p>
 
               {/* Quantity controls + remove */}
-              <div className="mt-2 flex items-center gap-2">
+              <div className="mt-2 flex items-center gap-2 text-mist-700">
                 <button
                   className="rounded border px-2"
                   onClick={() => setQuantity(item.id, item.quantity - 1)}
@@ -74,7 +74,7 @@ export default function CartPage() {
             </div>
 
             {/* Line total */}
-            <div className="font-semibold">
+            <div className="font-semibold text-black">
               {(item.unitPrice * item.quantity).toFixed(2)} kr
             </div>
           </div>
@@ -83,11 +83,13 @@ export default function CartPage() {
 
       {/* Total + Checkout */}
       <div className="mt-6 flex items-center justify-between">
-        <p className="text-lg font-bold">Total: {total.toFixed(2)} kr</p>
+        <p className="text-lg font-bold text-black">
+          Total: {total.toFixed(2)} kr
+        </p>
 
         <Link
           href="/checkout/success"
-          className="rounded bg-black px-4 py-2 text-white hover:bg-zinc-800"
+          className="rounded bg-stone-800 px-4 py-2 text-white hover:bg-zinc-800"
         >
           Checkout
         </Link>

@@ -17,7 +17,7 @@ export default function ProductCard({ product }: { product: Product }) {
     >
       <div className="relative">
         {hasDiscount && (
-          <div className="absolute top-2 left-2 bg-black text-white text-xs px-2 py-1 rounded">
+          <div className="absolute top-2 left-2 bg-red-700 text-white text-xs px-2 py-1 rounded">
             -{discount}%
           </div>
         )}
@@ -28,12 +28,12 @@ export default function ProductCard({ product }: { product: Product }) {
         />
       </div>
       <div className="mt-2">
-        <h2 className="text-lg font-semibold">{product.title}</h2>
+        <h2 className="text-lg text-black font-semibold">{product.title}</h2>
         <p className="mt-1 text-sm text-gray-600">
           Rating: <span className="font-medium">{product.rating}</span>
         </p>
         <div className="mt-2 flex items-center gap-2">
-          <p className="font-bold">{mainPrice} kr</p>
+          <p className="font-bold text-black">{mainPrice} kr</p>
           {hasDiscount && (
             <p className="text-sm text-gray-500 line-through">
               {product.price} kr

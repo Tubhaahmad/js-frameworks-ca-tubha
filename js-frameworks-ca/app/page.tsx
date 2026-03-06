@@ -70,17 +70,19 @@ export default function HomePage() {
   const suggestions = query.length === 0 ? [] : sortedProducts.slice(0, 6); //show max six results
 
   return (
-    <main className="p-6">
+    <main className="p-6 bg-white">
       <div className="mx-auto max-w-5xl">
-        <h1 className="text-2xl font-bold">Products</h1>
+        <h1 className="text-2xl font-bold text-black">Products</h1>
 
         {/*Search and Sort controls*/}
         <div className="mt-4 grid gap-3 md:grid-cols-2">
           {/*searcu input */}
           <div>
-            <label className="mt-4 grid gap-3 md:grid-cols-2">Search</label>
+            <label className="mt-4 text-black grid gap-3 md:grid-cols-2">
+              Search
+            </label>
             <input
-              className="mt-1 w-full rounded border bg-black p-2"
+              className="mt-1 w-full rounded border text-black p-2"
               placeholder="Search by title..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -108,10 +110,10 @@ export default function HomePage() {
             )}
             {/*sorting dropdown */}
             <div>
-              <label className="text-sm font-medium">Sort</label>
+              <label className="text-m text-black font-medium">Sort</label>
 
               <select
-                className="mt-1 w-full rounded border bg-white p-2"
+                className="mt-1 text-black w-full rounded border bg-white p-2"
                 value={sort}
                 onChange={(e) => setSort(e.target.value as SortOption)}
               >

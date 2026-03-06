@@ -65,7 +65,7 @@ export default function ProductPage() {
 
             {/* Price */}
             <div className="mt-4 flex items-center gap-3">
-              <p className="text-xl font-bold">{mainPrice} kr</p>
+              <p className="text-xl font-bold text-black">{mainPrice} kr</p>
 
               {hasDiscount && (
                 <p className="text-zinc-500 line-through">{product.price} kr</p>
@@ -78,7 +78,7 @@ export default function ProductPage() {
             {/* Tags */}
             {product.tags?.length > 0 && (
               <div className="mt-4">
-                <p className="text-sm font-semibold">Tags</p>
+                <p className="text-sm font-semibold text-gray-500">Tags</p>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {product.tags.map((tag) => (
                     <span

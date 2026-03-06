@@ -9,13 +9,13 @@ export default function Header() {
   const count = items.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <header className="border-b bg-white p-4">
+    <header className="border-b bg-white p-4 text-mauve-400">
       <div className="mx-auto flex max-w-5xl items-center justify-between">
-        <Link href="/" className="font-bold">
+        <Link href="/" className="font-bold text-black">
           Shop
         </Link>
 
-        <Link href="/cart" className="font-medium hover:underline">
+        <Link href="/cart" className="font-medium hover:underline text-black">
           Cart ({count})
         </Link>
       </div>
