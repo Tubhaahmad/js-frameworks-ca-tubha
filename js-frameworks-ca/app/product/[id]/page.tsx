@@ -3,10 +3,11 @@
 import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { getProductById } from "../../../lib/api";
+import { useShoppingCart } from "../../../store/cart";
 
 export default function ProductPage() {
   const params = useParams<{ id?: string | string[] }>();
-
+  const addItem = useShoppingCart((state) => state.addItem);
   // Convert id into a proper string
   const rawId = params?.id;
   const id = Array.isArray(rawId) ? rawId[0] : rawId;
@@ -74,7 +75,7 @@ export default function ProductPage() {
             {/* Description */}
             <p className="mt-4 text-zinc-700">{product.description}</p>
 
-            {/* Tags (only show if tags exist) */}
+            {/* Tags */}
             {product.tags?.length > 0 && (
               <div className="mt-4">
                 <p className="text-sm font-semibold">Tags</p>
@@ -91,8 +92,17 @@ export default function ProductPage() {
               </div>
             )}
 
-            {/* Add to Cart  */}
-            <button className="mt-6 w-full rounded-md bg-black px-4 py-2 text-white hover:bg-zinc-800">
+            {/* Add to Cart */}
+            <button
+              className="mt-6 w-full rounded-md bg-black px-4 py-2 text-white hover:bg-zinc-800"
+              onClick={() => {
+                addItem(product);
+                console.log(
+                  "Cart items now:",
+                  useShoppingCart.getState().items,
+                );
+              }}
+            >
               Add to Cart
             </button>
           </div>
