@@ -13,7 +13,7 @@ export default function SuccessPage() {
   }, [clearCart]);
 
   return (
-    <main className="p-6 bg-white h-200 text-black">
+    <main className="p-6 bg-white min-h-screen text-black">
       <h1 className="text-2xl font-bold">Checkout successful</h1>
       <p className="mt-2">
         Thank you for your order! Your cart has been cleared.
