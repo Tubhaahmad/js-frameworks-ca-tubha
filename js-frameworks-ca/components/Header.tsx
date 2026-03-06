@@ -15,6 +15,13 @@ export default function Header() {
           Shop
         </Link>
 
+        <Link
+          href="/contact"
+          className="font-medium hover:underline text-black"
+        >
+          Contact
+        </Link>
+
         <Link href="/cart" className="font-medium hover:underline text-black">
           Cart ({count})
         </Link>
