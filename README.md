@@ -1,6 +1,6 @@
 # JS Frameworks CA – Online Shop
 
-**Live demo**: https://js-frameworks-ca-tubha.vercel.app
+**Live demo**: [https://js-frameworks-ca-tubha.vercel.app] 
 
 Online shop built with Next.js (App Router) + TypeScript.  
 Uses the Noroff Online Shop API to display products, product details, search, cart, checkout success flow, and a validated contact form.
@@ -29,6 +29,7 @@ Uses the Noroff Online Shop API to display products, product details, search, ca
 
 ## Tech stack
 
+- React
 - Next.js (App Router)
 - TypeScript (strict)
 - Tailwind CSS
