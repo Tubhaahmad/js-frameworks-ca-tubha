@@ -1,38 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JS Frameworks CA – Online Shop
 
-## Getting Started
+Live demo: <VERCEL LINK HERE>
 
-First, run the development server:
+Online shop built with Next.js (App Router) + TypeScript.  
+Uses the Noroff Online Shop API to display products, product details, search, cart, checkout success flow, and a validated contact form.
+
+---
+
+## Features
+
+- Product list (grid)
+  - Image, title, rating
+  - Price with discount handling (original + discounted, strike-through)
+  - Discount badge (%) when discounted
+- Product details page
+  - Fetch by id
+  - Tags and reviews when available
+  - Add to cart
+- Search suggestions on homepage (click to go to product)
+- Cart system (persisted)
+  - Cart count in header
+  - Quantity controls, remove item, total cost
+  - Checkout button
+- Checkout success page clears cart
+- Contact form with TypeScript validation + API route
+
+---
+
+## Tech stack
+
+- Next.js (App Router)
+- TypeScript (strict)
+- Tailwind CSS
+- TanStack Query
+- Zustand + persist (localStorage)
+
+---
+
+## Getting started (local)
+
+### 1) Enter the project folder
+
+The Next.js app is inside `js-frameworks-ca/`:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd js-frameworks-ca
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2 Install dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3) Run dev server
+```bash
+npm run dev
+```
 
-## Learn More
+Open http://localhost:3000
 
-To learn more about Next.js, take a look at the following resources:
+### Build (production
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run start
+```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-## testing
+### API
+Noroff Online Shop API endpoints used:
+- GET /online-shop
+- GET /online-shop/<id>
