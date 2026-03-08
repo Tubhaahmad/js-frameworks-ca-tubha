@@ -1,6 +1,6 @@
 # JS Frameworks CA – Online Shop
 
-Live demo: <VERCEL LINK HERE>
+**Live demo**: https://js-frameworks-ca-tubha.vercel.app
 
 Online shop built with Next.js (App Router) + TypeScript.  
 Uses the Noroff Online Shop API to display products, product details, search, cart, checkout success flow, and a validated contact form.
@@ -58,9 +58,9 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000
+Open http://localhost:3000 (or the port shown in the terminal)”.
 
-### Build (production
+### Build (production)
 
 ```bash
 npm run build
@@ -70,7 +70,19 @@ npm run build
 npm run start
 ```
 
+---
+
 ### API
 Noroff Online Shop API endpoints used:
 - GET /online-shop
 - GET /online-shop/<id>
+
+---
+
+### AI Usage
+- AI usage has been documented in AI_LOG.md according to the assignment rules.
+
+---
+
+### Author
+- Tubha Ahmad
