@@ -72,34 +72,39 @@ export default function HomePage() {
   return (
     <main className="p-6 bg-white">
       <div className="mx-auto max-w-5xl">
-        <h1 className="text-2xl font-bold text-black">Products</h1>
+        <h1 className="pb-5 text-center text-4xl font-light tracking-[0.3em] uppercase text-black">
+          Products
+        </h1>
 
         {/*Search and Sort controls*/}
-        <div className="mt-4 grid gap-3 md:grid-cols-2">
-          {/*searcu input */}
-          <div>
-            <label className="mt-4 text-black grid gap-3 md:grid-cols-2">
-              Search
-            </label>
+        <div className="mt-6 pb-3 mx-auto max-w-7xl flex flex-col sm:flex-row gap-3 items-center justify-center px-4">
+          {/* Search input */}
+          <div className="relative w-full sm:w-72">
             <input
-              className="mt-1 w-full rounded border text-black p-2"
-              placeholder="Search by title..."
+              className="w-full border-b border-gray-300 bg-transparent text-xs tracking-widest uppercase placeholder:text-gray-400 text-gray-900 py-2 pr-4 outline-none focus:border-black transition-colors duration-200"
+              placeholder="Search..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
-            {/*clickable results container */}
+
+            {/* Search suggestions */}
             {suggestions.length > 0 && (
-              <div className="mt-2 rounded border bg-white shadow-sm">
+              <div className="absolute top-full left-0 w-full bg-white border border-gray-100 shadow-sm z-10">
                 <ul>
                   {suggestions.map((p) => (
-                    <li key={p.id} className="border-b last:border-b-0">
+                    <li
+                      key={p.id}
+                      className="border-b border-gray-50 last:border-b-0"
+                    >
                       <Link
                         href={`/product/${p.id}`}
-                        className="flex items-center justify-between p-2 hover:bg-zinc-50"
-                        onClick={() => setSearch("")} // optional: clear after click
+                        className="flex items-center justify-between px-3 py-2 hover:bg-gray-50 transition-colors"
+                        onClick={() => setSearch("")}
                       >
-                        <span className="font-medium">{p.title}</span>
-                        <span className="text-sm text-zinc-600">
+                        <span className="text-xs uppercase tracking-wider text-gray-800">
+                          {p.title}
+                        </span>
+                        <span className="text-xs text-gray-800">
                           {getDisplayPrice(p)} kr
                         </span>
                       </Link>
@@ -108,26 +113,23 @@ export default function HomePage() {
                 </ul>
               </div>
             )}
-            {/*sorting dropdown */}
-            <div>
-              <label className="text-m text-black font-medium">Sort</label>
-
-              <select
-                className="mt-1 text-black w-full rounded border bg-white p-2"
-                value={sort}
-                onChange={(e) => setSort(e.target.value as SortOption)}
-              >
-                <option value="recommended">Recommended</option>
-                <option value="price-low">Price: low → high</option>
-                <option value="price-high">Price: high → low</option>
-                <option value="rating-high">Rating: high → low</option>
-              </select>
-            </div>
           </div>
+
+          {/* Sort dropdown */}
+          <select
+            className="border-b border-gray-300 bg-transparent text-xs tracking-widest uppercase text-gray-600 py-2 outline-none focus:border-black transition-colors duration-200 cursor-pointer"
+            value={sort}
+            onChange={(e) => setSort(e.target.value as SortOption)}
+          >
+            <option value="recommended">Recommended</option>
+            <option value="price-low">Price: low → high</option>
+            <option value="price-high">Price: high → low</option>
+            <option value="rating-high">Rating: high → low</option>
+          </select>
         </div>
 
         {/* products grid*/}
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 px-4">
           {sortedProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
