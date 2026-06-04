@@ -1,7 +1,10 @@
+
 # JS Frameworks CA – Online Shop
 
 Online shop built with Next.js (App Router) + TypeScript.  
 Uses the Noroff Online Shop API to display products, product details, search, cart, checkout success flow, and a validated contact form.
+
+<img width="2913" height="1484" alt="js-frameworks-ca" src="https://github.com/user-attachments/assets/08762a50-abf2-4013-8289-c8bb38eee579" />
 
 ---
 
