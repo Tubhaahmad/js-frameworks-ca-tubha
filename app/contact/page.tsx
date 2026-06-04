@@ -100,90 +100,101 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen bg-white p-6">
-      <div className="mx-auto max-w-xl rounded-lg bg-white p-6 shadow-sm">
-        <h1 className="text-2xl font-bold text-black">Contact</h1>
-        <p className="mt-2 text-sm text-zinc-600">
-          Send us a message (all fields are required).
-        </p>
+    <main className="min-h-screen bg-white flex items-center justify-center px-6 py-16">
+      <div className="w-full max-w-md">
+        <div className="text-center mb-10">
+          <h1 className="text-2xl font-light tracking-[0.3em] uppercase text-black">
+            Contact
+          </h1>
+          <p className="mt-2 text-xs uppercase tracking-widest text-gray-400">
+            Send us a message
+          </p>
+        </div>
+
         {status === "success" && (
-          <div className="mt-4 rounded border border-green-200 bg-green-50 p-3 text-sm">
-            Message sent successfully.
+          <div className="mb-6 border border-gray-900 px-4 py-3 text-xs uppercase tracking-widest text-gray-900 text-center">
+            Message sent successfully
           </div>
         )}
 
         {status === "error" && (
-          <div className="mt-4 rounded border border-green-200 bg-green-50 p-3 text-sm">
+          <div className="mb-6 border border-red-300 px-4 py-3 text-xs uppercase tracking-widest text-red-500 text-center">
             Something went wrong. Please try again.
           </div>
         )}
 
-        <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
-            <label className="text-sm font-medium text-gray-500">
+            <label className="text-xs uppercase tracking-widest text-gray-400">
               Full Name
             </label>
             <input
               name="fullName"
               value={values.fullName}
               onChange={handleChange}
-              className="mt-1 w-full rounded border bg-white p-2 text-gray-500"
+              className="mt-2 w-full border-b border-gray-200 bg-transparent py-2 text-xs tracking-wide text-gray-900 placeholder:text-gray-300 outline-none focus:border-black transition-colors duration-200"
               placeholder="Your full name"
             />
             {errors.fullName && (
-              <p className="mt-1 text-sm text-red-600">{errors.fullName}</p>
+              <p className="mt-1 text-xs text-red-400">{errors.fullName}</p>
             )}
           </div>
 
           <div>
-            <label className="text-sm font-medium text-gray-500">Subject</label>
+            <label className="text-xs uppercase tracking-widest text-gray-400">
+              Subject
+            </label>
             <input
               name="subject"
               value={values.subject}
               onChange={handleChange}
-              className="mt-1 w-full rounded border bg-white p-2 text-gray-500"
+              className="mt-2 w-full border-b border-gray-200 bg-transparent py-2 text-xs tracking-wide text-gray-900 placeholder:text-gray-300 outline-none focus:border-black transition-colors duration-200"
               placeholder="What is this about?"
             />
             {errors.subject && (
-              <p className="mt-1 text-sm text-red-600">{errors.subject}</p>
+              <p className="mt-1 text-xs text-red-400">{errors.subject}</p>
             )}
           </div>
 
           <div>
-            <label className="text-sm font-medium text-gray-500">Email</label>
+            <label className="text-xs uppercase tracking-widest text-gray-400">
+              Email
+            </label>
             <input
               name="email"
               value={values.email}
               onChange={handleChange}
-              className="mt-1 w-full rounded border bg-white p-2 text-gray-500"
+              className="mt-2 w-full border-b border-gray-200 bg-transparent py-2 text-xs tracking-wide text-gray-900 placeholder:text-gray-300 outline-none focus:border-black transition-colors duration-200"
               placeholder="you@example.com"
             />
             {errors.email && (
-              <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+              <p className="mt-1 text-xs text-red-400">{errors.email}</p>
             )}
           </div>
 
           <div>
-            <label className="text-sm font-medium text-gray-500">Message</label>
-            <input
+            <label className="text-xs uppercase tracking-widest text-gray-400">
+              Message
+            </label>
+            <textarea
               name="message"
               value={values.message}
               onChange={handleChange}
-              className="mt-1 w-full rounded border bg-white p-2 text-gray-500"
+              rows={4}
+              className="mt-2 w-full border-b border-gray-200 bg-transparent py-2 text-xs tracking-wide text-gray-900 placeholder:text-gray-300 outline-none focus:border-black transition-colors duration-200 resize-none"
               placeholder="Write your message here..."
             />
             {errors.message && (
-              <p className="mt-1 text-sm text-red-600">{errors.message}</p>
+              <p className="mt-1 text-xs text-red-400">{errors.message}</p>
             )}
           </div>
 
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="w-full rounded bg-black px-4 py-2 text-white hover:bg-zinc-800 disabled:opacity-60"
+            className="w-full bg-black py-3 text-xs font-medium tracking-widest uppercase text-white hover:bg-zinc-800 transition-colors duration-200 disabled:opacity-50"
           >
-            {" "}
-            {status === "submitting" ? "Sending..." : "Send message"}
+            {status === "submitting" ? "Sending..." : "Send Message"}
           </button>
         </form>
       </div>
