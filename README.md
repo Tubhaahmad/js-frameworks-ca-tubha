@@ -92,53 +92,6 @@ Noroff Online Shop API endpoints used:
 
 ---
 
-### Author
-
-### 1) Enter the project folder
-
-The Next.js app is inside `js-frameworks-ca/`:
-
-```bash
-cd js-frameworks-ca
-```
-
-### 2 Install dependencies
-
-```bash
-npm install
-```
-
-### 3) Run dev server
-```bash
-npm run dev
-```
-
-Open http://localhost:3000 (or the port shown in the terminal).
-
-### Build (production)
-
-```bash
-npm run build
-```
-
-```bash
-npm run start
-```
-
----
-
-### API
-Noroff Online Shop API endpoints used:
-- GET /online-shop
-- GET /online-shop/<id>
-
----
-
-### AI Usage
-- AI usage has been documented in AI_LOG.md according to the assignment rules.
-
----
-
 ## Contributing
 
 If you'd like to contribute, please fork the repository and open a pull request. All changes should be made on a separate branch and reviewed before merging into main.
